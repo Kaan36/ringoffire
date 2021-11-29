@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatDialogRef } from '@angular/material/dialog';
 
 import { DialogAddPlayerComponent } from './dialog-add-player.component';
 
@@ -8,7 +9,8 @@ describe('DialogAddPlayerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DialogAddPlayerComponent ]
+      declarations: [ DialogAddPlayerComponent ],
+      providers: [{provide: MatDialogRef, useValue: []}]
     })
     .compileComponents();
   });

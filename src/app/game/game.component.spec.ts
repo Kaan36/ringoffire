@@ -1,4 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AngularFireModule } from '@angular/fire/compat';
+import { FirestoreModule } from '@angular/fire/firestore';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ActivatedRoute } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 import { GameComponent } from './game.component';
 
@@ -8,7 +13,9 @@ describe('GameComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GameComponent ]
+      imports: [ AngularFireModule.initializeApp(environment.firebase), FirestoreModule, MatDialogModule],
+      declarations: [ GameComponent ],
+      providers: [{provide: ActivatedRoute, useValue: []}, ]
     })
     .compileComponents();
   });
